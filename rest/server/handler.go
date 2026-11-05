@@ -316,10 +316,10 @@ func invokeTranslib(args *translibArgs, rc *RequestContext) (int, []byte, error)
 		resp, err1 := translib.Get(req)
 		if err1 == nil {
 			status = 200
-                        for _, iter := range resp {
-                                byteresp := []byte(iter.Payload)
-                                content = append(content, byteresp...)
-                        }
+			for _, iter := range resp {
+				byteresp := []byte(iter.Payload)
+				content = append(content, byteresp...)
+			}
 		} else {
 			err = err1
 		}
@@ -370,11 +370,11 @@ func invokeTranslib(args *translibArgs, rc *RequestContext) (int, []byte, error)
 		}
 		res, err1 := translib.Action(req)
 		if err1 == nil {
-                        status = 200
-                        for _, iter := range res {
-                                byteresp := []byte(iter.Payload)
-                                content = append(content, byteresp...)
-                        }
+			status = 200
+			for _, iter := range res {
+				byteresp := []byte(iter.Payload)
+				content = append(content, byteresp...)
+			}
 		} else {
 			err = err1
 		}
